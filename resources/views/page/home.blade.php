@@ -232,53 +232,16 @@ Trang chủ
                        </div>
                        </div>
                  <div class="col-12">
-                        <div class="list-blog single-post d-sm-flex wow fadeInUpBig" data-wow-delay=".2s">
-
-                            <div class="post-thumb">
-                                <img src="img/blog-img/6.jpg" alt="">
-                            </div>
-
-                            <div class="post-content">
-                                <div class="post-meta d-flex">
-                                    <div class="post-author-date-area d-flex">
-
-                                        <div class="post-author">
-                                            <a href="#">By ăn thôi nào</a>
-                                        </div>
-
-                                        <div class="post-date">
-                                            <a href="#">01 tháng 4,2019</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="post-comment-share-area d-flex">
-
-                                        <div class="post-favourite">
-                                            <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
-                                        </div>
-
-                                        <div class="post-comments">
-                                            <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
-                                        </div>
-
-                                        <div class="post-share">
-                                            <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#">
-                                    <h4 class="post-headline">Những phụ kiện "bất ly thân" khi đi du lịch</h4>
-                                </a>
-                                <p>Những phụ kiện thời trang đơn giản nhưng rất tiện dụng này sẽ giúp bạn luôn xinh xắn và nổi bật, bất kể trong những chuyến du lịch dài ngày hay những dịp du lịch ngắn vào cuối tuần.</p>
-                                <a href="#" class="read-more">Xem chi tiết...</a>
-                            </div>
-                        </div>
+                    
                     </div>
+                    @foreach ($datablogmv as $item)
+                        
+                    
                     <div class="col-12">
                             <div class="list-blog single-post d-sm-flex wow fadeInUpBig" data-wow-delay=".2s">
 
                                 <div class="post-thumb">
-                                    <img src="img/blog-img/6.jpg" alt="">
+                                    <img src="../public/img/{{ $item['anhmota'] }}" alt="">
                                 </div>
 
                                 <div class="post-content">
@@ -310,18 +273,22 @@ Trang chủ
                                         </div>
                                     </div>
                                     <a href="#">
-                                        <h4 class="post-headline">Những phụ kiện "bất ly thân" khi đi du lịch</h4>
+                                        <h4 class="post-headline">{{ $item['tieudeblog'] }}</h4>
                                     </a>
-                                    <p>Những phụ kiện thời trang đơn giản nhưng rất tiện dụng này sẽ giúp bạn luôn xinh xắn và nổi bật, bất kể trong những chuyến du lịch dài ngày hay những dịp du lịch ngắn vào cuối tuần.</p>
+                                    <p>{{ $item['mota'] }}</p>
                                     <a href="#" class="read-more">Xem chi tiết...</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-12">
-                                <div class="list-blog single-post d-sm-flex wow fadeInUpBig" data-wow-delay=".2s">
+                    </div>
+                    @endforeach
+                    @foreach ($datablogtt as $item)
+                        
+                    
+                     <div class="col-12">
+                            <div class="list-blog single-post d-sm-flex wow fadeInUpBig" data-wow-delay=".2s">
 
                                     <div class="post-thumb">
-                                        <img src="img/blog-img/6.jpg" alt="">
+                                        <img src="../public/img/{{ $item['anhmota'] }}" alt="">
                                     </div>
 
                                     <div class="post-content">
@@ -353,18 +320,22 @@ Trang chủ
                                             </div>
                                         </div>
                                         <a href="#">
-                                            <h4 class="post-headline">Những phụ kiện "bất ly thân" khi đi du lịch</h4>
+                                            <h4 class="post-headline">{{ $item['tieudeblog'] }}</h4>
                                         </a>
-                                        <p>Những phụ kiện thời trang đơn giản nhưng rất tiện dụng này sẽ giúp bạn luôn xinh xắn và nổi bật, bất kể trong những chuyến du lịch dài ngày hay những dịp du lịch ngắn vào cuối tuần.</p>
+                                        <p>{{ $item['mota'] }}</p>
                                         <a href="#" class="read-more">Xem chi tiết...</a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-12">
-                                    <div class="list-blog single-post d-sm-flex wow fadeInUpBig" data-wow-delay=".2s">
+                     </div>
+                     @endforeach
+                     @foreach ($datablogdl as $item)
+                         
+                     
+                    <div class="col-12">
+                            <div class="list-blog single-post d-sm-flex wow fadeInUpBig" data-wow-delay=".2s">
 
                                         <div class="post-thumb">
-                                            <img src="img/blog-img/6.jpg" alt="">
+                                            <img src="../public/img/{{ $item['anhmota'] }}" alt="">
                                         </div>
 
                                         <div class="post-content">
@@ -396,14 +367,14 @@ Trang chủ
                                                 </div>
                                             </div>
                                             <a href="#">
-                                                <h4 class="post-headline">Những phụ kiện "bất ly thân" khi đi du lịch</h4>
+                                                <h4 class="post-headline">{{ $item['tieudeblog'] }}</h4>
                                             </a>
-                                            <p>Những phụ kiện thời trang đơn giản nhưng rất tiện dụng này sẽ giúp bạn luôn xinh xắn và nổi bật, bất kể trong những chuyến du lịch dài ngày hay những dịp du lịch ngắn vào cuối tuần.</p>
+                                            <p>{{ $item['mota'] }}</p>
                                             <a href="#" class="read-more">Xem chi tiết...</a>
                                         </div>
                                     </div>
-                                </div>
-
+                    </div>
+                    @endforeach
 
 
                 </div>
