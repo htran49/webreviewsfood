@@ -12,3 +12,5 @@
 */
 
 Route::get('/','homeController@showhome');
+
+Route::get('Bai-viet/{unsigned_name}','homeController@Baiviet');

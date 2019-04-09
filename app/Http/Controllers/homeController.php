@@ -9,13 +9,17 @@ class homeController extends Controller
     //
     public function showhome(){
         $slide='App\Slide':: get();
-        $postanuong='App\Post':: where('danhmuc_id','danhmuc_anuong')-> get();
-        $postdulich='App\Post':: where('danhmuc_id','danhmuc_dulich')-> get();
-        $postgiaitri='App\Post':: where('danhmuc_id','danhmuc_giaitri')-> get();
-        $blogdulich='App\Blog'::where('nhomblog_id','blog_dulich') ->get();
-        $blogmeovat='App\Blog'::where('nhomblog_id','blog_meovat') ->get();
-        $blogthoitrang='App\Blog'::where('nhomblog_id','blog_thoitrang') ->get();
-        return view('page.home')->with('dataslide',$slide)->with('datapostanuong',$postanuong)->with('datapostdulich',$postdulich)->with('datapostgiaitri',$postgiaitri)->with('datablogdl',$blogdulich)->with('datablogmv',$blogmeovat)->with('datablogtt',$blogthoitrang);
+        $postanuong='App\Post':: where('danhmuc_id','danhmuc_anuong')->limit(4)-> get();
+        $postdulich='App\Post':: where('danhmuc_id','danhmuc_dulich')->limit(4)-> get();
+        $postgiaitri='App\Post':: where('danhmuc_id','danhmuc_giaitri')-> limit(4)->get();
+        $blog='App\Blog'::limit(4)->get();
+        return view('page.home')->with('dataslide',$slide)->with('datapostanuong',$postanuong)->with('datapostdulich',$postdulich)->with('datapostgiaitri',$postgiaitri)->with('datablog',$blog);
+    }
+    public function Baiviet($unsigned_name){
+        $baiviet='App\Post'::where ('baiviet_id',$unsigned_name)->get();
+        $danhmuc=$baiviet[0]['danhmuc_id'];
+        $baivietlq='App\Post'::where('danhmuc_id',$danhmuc)->limit(5)->get();
+        return view('page.detail')->with('databaiviet',$baiviet)->with('datalq',$baivietlq);
     }
 
 }
