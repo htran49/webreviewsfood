@@ -2,7 +2,7 @@
     @foreach ($dataslide as $item)
     <div class="welcome-single-slide">
         <!-- Post Thumb -->
-        <img src="../public/img/slide-img/{{ $item['anh'] }}" alt="">
+        <img src="public/img/slide-img/{{ $item['anh'] }}" alt="">
         <!-- Overlay Text -->
         <div class="project_title">
             <div class="post-date-commnents d-flex">

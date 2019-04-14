@@ -12,5 +12,13 @@
 */
 
 Route::get('/','homeController@showhome');
+Route::get('Bai-viet/{unsigned_name}','PostController@Baiviet');
+Route::get('Bai-viet-1/{unsigned_name}','PostController@Baiviet1');
+Route::get('blog/{unsigned_name}','BlogController@blog');
+Route::get('danhmuc/{unsigned_name}','categoryController@Baiviet');
+Route::get('listblog','categoryController@Blog');
+Route::get('listblog/blog/{unsigned_name}','BlogController@blog');
+Route::get('danhmuc/Bai-viet/{unsigned_name}','PostController@Baiviet');
+Route::get('danhmuc/Bai-viet/{unsigned_name}','PostController@Baiviet');
 
-Route::get('Bai-viet/{unsigned_name}','homeController@Baiviet');
+

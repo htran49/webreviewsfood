@@ -13,7 +13,7 @@ Trang chủ
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="single_catagory wow fadeInUp" data-wow-delay=".3s">
-                    <img src="../public/img/catagory-img/1.jpg" alt="" height="250px">
+                    <img src="public/img/catagory-img/1.jpg" alt="" height="250px">
                     <div class="catagory-title">
                         <a href="#">
                             <h5>Địa điểm ăn uống</h5>
@@ -23,7 +23,7 @@ Trang chủ
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="single_catagory wow fadeInUp" data-wow-delay=".6s">
-                    <img src="../public/img/catagory-img/2.jpg" alt="" height="250px">
+                    <img src="public/img/catagory-img/2.jpg" alt="" height="250px">
                     <div class="catagory-title">
                         <a href="#">
                             <h5>Du lịch</h5>
@@ -33,7 +33,7 @@ Trang chủ
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="single_catagory wow fadeInUp" data-wow-delay=".9s">
-                    <img src="../public/img/catagory-img/3.jpg" alt="" height="250px">
+                    <img src="public/img/catagory-img/3.jpg" alt="" height="250px">
                     <div class="catagory-title">
                         <a href="#">
                             <h5>Giải trí</h5>
@@ -56,7 +56,8 @@ Trang chủ
                     <!-- Single Post -->
                     <div class="single-post">
                          <div class="post-title">
-                            <h2 class="post-headline">Những địa điểm ăn uống</h2>
+                         <a href="danhmuc/{{ $danhmucanuong }}"> <h2 class="post-headline">Những địa điểm ăn uống</h2></a>
+
                             <div class="line"></div>
                     </div>
                     </div>
@@ -64,13 +65,13 @@ Trang chủ
 
 
                     @foreach ($datapostanuong as $item)
-                        
-                  
+
+
                     <div class="col-12 col-md-6">
                         <div class="single-post wow fadeInUp" data-wow-delay=".4s">
                             <!-- Post Thumb -->
                             <div class="post-thumb">
-                                <a href="Bai-viet/{{ $item['baiviet_id'] }}"><img src="../public/img/{{ $item['anhgioithieu'] }}" alt=""></a>
+                                <a href="Bai-viet/{{ $item['baiviet_id'] }}"><img src="public/img/{{ $item['anhgioithieu'] }}" alt=""></a>
                             </div>
                             <!-- Post Content -->
                             <div class="post-content">
@@ -78,11 +79,11 @@ Trang chủ
                                     <div class="post-author-date-area d-flex">
                                         <!-- Post Author -->
                                         <div class="post-author">
-                                            <a href="#">By {{ $item['user_id'] }}}</a>
+                                            <a href="#">By {{ $item['user_id'] }}</a>
                                         </div>
                                         <!-- Post Date -->
                                         <div class="post-date">
-                                            <a href="#">01 tháng 04, 2019</a>
+                                            <a href="#">{{ date_format($item['created_at'],'d') }}/{{ date_format($item['created_at'],'m') }}/20{{ date_format($item['created_at'],'y') }}</a>
                                         </div>
                                     </div>
                                     <!-- Post Comment & Share Area -->
@@ -101,33 +102,33 @@ Trang chủ
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#">
+                                <a href="Bai-viet/{{ $item['baiviet_id'] }}">
                                     <h4 class="post-headline">{{ $item['tieude'] }}</h4>
                                 </a>
                             </div>
                         </div>
                     </div>
                     @endforeach
-                
+
 
 
                     <div class="single-post">
                             <div class="post-title">
-                               <h2 class="post-headline">Những địa điểm du lịch hấp dẫn</h2>
+                                    <a href="danhmuc/{{ $danhmucdulich }}"><h2 class="post-headline">Những địa điểm du lịch hấp dẫn</h2></a>
                                <div class="line"></div>
                        </div>
                        </div>
 
 
                        @foreach ($datapostdulich as $item)
-                           
-                       
+
+
                        <!-- Single Post -->
                        <div class="col-12 col-md-6">
                            <div class="single-post wow fadeInUp" data-wow-delay=".4s">
                                <!-- Post Thumb -->
                                <div class="post-thumb">
-                                   <img src="../public/img/{{ $item['anhgioithieu'] }}" alt="">
+                                   <a href="Bai-viet-1/{{ $item['baiviet_id'] }}"><img src="public/img/{{ $item['anhgioithieu'] }}" alt=""></a>
                                </div>
                                <!-- Post Content -->
                                <div class="post-content">
@@ -135,11 +136,11 @@ Trang chủ
                                        <div class="post-author-date-area d-flex">
                                            <!-- Post Author -->
                                            <div class="post-author">
-                                               <a href="#">{{ $item['user_id'] }}</a>
+                                               By <a href="#">{{ $item['user_id'] }}</a>
                                            </div>
                                            <!-- Post Date -->
                                            <div class="post-date">
-                                               <a href="#">01 tháng 04, 2019</a>
+                                               <a href="#">{{ date_format($item['created_at'],'d') }}/{{ date_format($item['created_at'],'m') }}/20{{ date_format($item['created_at'],'y') }}</a>
                                            </div>
                                        </div>
                                        <!-- Post Comment & Share Area -->
@@ -158,31 +159,31 @@ Trang chủ
                                            </div>
                                        </div>
                                    </div>
-                                   <a href="#">
+                                   <a href="Bai-viet-1/{{ $item['baiviet_id'] }}">
                                        <h4 class="post-headline">{{ $item['tieude'] }}</h4>
                                    </a>
                                </div>
                            </div>
                        </div>
-                     
+
                        @endforeach
                        <div class="single-post">
                         <div class="post-title">
-                           <h2 class="post-headline">Những địa điểm giải trí hấp dẫn</h2>
+                                <a href="danhmuc/{{ $danhmucgiaitri }}"><h2 class="post-headline">Những địa điểm giải trí hấp dẫn</h2></a>
                            <div class="line"></div>
                    </div>
                    </div>
 
 
                    @foreach ($datapostgiaitri as $item)
-                       
-                   
+
+
                    <!-- Single Post -->
                    <div class="col-12 col-md-6">
                        <div class="single-post wow fadeInUp" data-wow-delay=".4s">
                            <!-- Post Thumb -->
                            <div class="post-thumb">
-                               <img src="../public/img/{{ $item['anhgioithieu'] }}" alt="">
+                                <a href="Bai-viet-1/{{ $item['baiviet_id'] }}"><img src="public/img/{{ $item['anhgioithieu'] }}" alt=""></a>
                            </div>
                            <!-- Post Content -->
                            <div class="post-content">
@@ -190,11 +191,11 @@ Trang chủ
                                    <div class="post-author-date-area d-flex">
                                        <!-- Post Author -->
                                        <div class="post-author">
-                                           <a href="#">{{ $item['user_id'] }}</a>
+                                          By <a href="#">{{ $item['user_id'] }}</a>
                                        </div>
                                        <!-- Post Date -->
                                        <div class="post-date">
-                                           <a href="#">01 tháng 04, 2019</a>
+                                           <a href="#">{{ date_format($item['created_at'],'d') }}/{{ date_format($item['created_at'],'m') }}/20{{ date_format($item['created_at'],'y') }}</a>
                                        </div>
                                    </div>
                                    <!-- Post Comment & Share Area -->
@@ -213,35 +214,43 @@ Trang chủ
                                        </div>
                                    </div>
                                </div>
-                               <a href="#">
+                               <a href="Bai-viet-1/{{ $item['baiviet_id'] }}">
                                    <h4 class="post-headline">{{ $item['tieude'] }}</h4>
                                </a>
                            </div>
                        </div>
                    </div>
-                 
+
                    @endforeach
 
+                   <div class="col-12 col-md-12">
+
+
+                        <div class="embed-responsive embed-responsive-4by3">
+                                <iframe width="1695" height="694" src="https://www.youtube.com/embed/6gC757hg6KY?autoplay=1" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                              </div>
+
+                    </div>
 
                     <!-- ******* List Blog Area Start ******* -->
 
                     <div class="single-post">
                             <div class="post-title">
-                               <h2 class="post-headline">Bí kíp</h2>
+                               <a href="listblog"><h2 class="post-headline">Bí kíp</h2></a>
                                <div class="line"></div>
                        </div>
                        </div>
                  <div class="col-12">
-                    
+
                     </div>
                     @foreach ($datablog as $item)
-                        
-                    
+
+
                     <div class="col-12">
                             <div class="list-blog single-post d-sm-flex wow fadeInUpBig" data-wow-delay=".2s">
 
                                 <div class="post-thumb">
-                                    <img src="../public/img/{{ $item['anhmota'] }}" alt="">
+                                        <a href="Bai-viet/{{ $item['baiviet_id'] }}"><img src="public/img/{{ $item['anhmota'] }}" alt=""></a>
                                 </div>
 
                                 <div class="post-content">
@@ -249,11 +258,11 @@ Trang chủ
                                         <div class="post-author-date-area d-flex">
 
                                             <div class="post-author">
-                                                <a href="#">By ăn thôi nào</a>
+                                                    By <a href="#">{{ $item['user_id'] }}</a>
                                             </div>
 
                                             <div class="post-date">
-                                                <a href="#">01 tháng 4,2019</a>
+                                                <a href="#">{{ date_format($item['created_at'],'d') }}/{{ date_format($item['created_at'],'m') }}/20{{ date_format($item['created_at'],'y') }}</a>
                                             </div>
                                         </div>
 
@@ -276,12 +285,12 @@ Trang chủ
                                         <h4 class="post-headline">{{ $item['tieudeblog'] }}</h4>
                                     </a>
                                     <p>{{ $item['mota'] }}</p>
-                                    <a href="#" class="read-more">Xem chi tiết...</a>
+                                    <a href="blog/{{ $item['blog_id'] }}" class="read-more">Xem chi tiết...</a>
                                 </div>
                             </div>
                     </div>
                     @endforeach
-               
+
 
 
                 </div>
@@ -296,10 +305,10 @@ Trang chủ
                             <h6>Giới thiệu</h6>
                         </div>
                         <div class="about-me-widget-thumb">
-                            <img src="img/about-img/1.jpg" alt="">
+                            <img src="public/img/gioithieu.jpg" alt="">
                         </div>
-                        <h4 class="font-shadow-into-light">Shopia Bernard</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+                        <h4 class="font-shadow-into-light">ĐÀ NẴNG</h4>
+                        <p>Đà Nẵng một trong những trung tâm du lịch hàng đầu miền trung là địa điểm du lịch mà bạn không thể bỏ qua.Không chỉ có du lịch Đà Nẵng còn là một thành phố ẩm thực đặc biệt và phong phú.</p>
                     </div>
 
                     <!-- Single Widget Area -->
@@ -309,11 +318,8 @@ Trang chủ
                         </div>
                         <div class="subscribe-link">
                             <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-google" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
+
                         </div>
                     </div>
 
@@ -323,59 +329,47 @@ Trang chủ
                             <h6>Review hot</h6>
                         </div>
                         <!-- Single Popular Post -->
+                        @foreach ($datanoibat as $item)
                         <div class="single-populer-post d-flex">
-                            <img src="img/sidebar-img/1.jpg" alt="">
-                            <div class="post-content">
-                                <a href="#">
-                                    <h6>8 món ăn vặt nổi tiếng ở Đà Nẵng, số 1 sốt xình xịch ở Hà Nội, Sài Gòn</h6>
-                                </a>
-                                <p>01 tháng 04,2019</p>
-                            </div>
-                        </div>
-                        <div class="single-populer-post d-flex">
-                                <img src="img/sidebar-img/1.jpg" alt="">
+                        <img src="public/img/{{ $item['anhgioithieu'] }}" alt="" height="100px">
                                 <div class="post-content">
                                     <a href="#">
-                                        <h6>8 món ăn vặt nổi tiếng ở Đà Nẵng, số 1 sốt xình xịch ở Hà Nội, Sài Gòn</h6>
+                                        <h6>{{ $item['tieude'] }}</h6>
                                     </a>
-                                    <p>01 tháng 04,2019</p>
+                                    <p>{{ date_format($item['created_at'],'d') }}/{{ date_format($item['created_at'],'m') }}/{{ date_format($item['created_at'],'y') }}</p>
                                 </div>
                             </div>
-                            <div class="single-populer-post d-flex">
-                                    <img src="img/sidebar-img/1.jpg" alt="">
-                                    <div class="post-content">
-                                        <a href="#">
-                                            <h6>8 món ăn vặt nổi tiếng ở Đà Nẵng, số 1 sốt xình xịch ở Hà Nội, Sài Gòn</h6>
-                                        </a>
-                                        <p>01 tháng 04,2019</p>
-                                    </div>
-                                </div>
-                                <div class="single-populer-post d-flex">
-                                        <img src="img/sidebar-img/1.jpg" alt="">
-                                        <div class="post-content">
-                                            <a href="#">
-                                                <h6>8 món ăn vặt nổi tiếng ở Đà Nẵng, số 1 sốt xình xịch ở Hà Nội, Sài Gòn</h6>
-                                            </a>
-                                            <p>01 tháng 04,2019</p>
-                                        </div>
-                                    </div>
+                        @endforeach
+
+
 
                     </div>
 
                     <!-- Single Widget Area -->
                     <div class="single-widget-area add-widget text-center">
                         <div class="add-widget-area">
-                            <img src="img/sidebar-img/6.jpg" alt="">
+                            <img src="public/img/adv.jpg" alt="">
                             <div class="add-text">
                                 <div class="yummy-table">
                                     <div class="yummy-table-cell">
-                                        <h2>You can cook</h2>
-                                        <p>Hãy dến You can cook để thực hiện những món ăn ngon</p>
-                                        <a href="#" class="add-btn">Đi thôi</a>
+                                        <h2>Đi ngay thôi</h2>
+                                        <p>Chúng ta sống trong một thế giới tuyệt vời đầy rẫy những vẻ đẹp, quyến rũ và phiêu lưu. Những chuyến phiêu lưu sẽ là bất tận, chỉ cần chúng ta tìm nó với đôi mắt luôn rộng mở.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <br>
+                        <div class="">
+                                <img src="public/img/adv1.jpg" alt="">
+                            </div>
+                            <br>
+                            <div class="">
+                                    <img src="public/img/adv2.jpg" alt="">
+                                </div>
+                                <br>
+                                <div class="">
+                                        <img src="public/img/adv3.jpg" alt="">
+                                    </div>
                     </div>
 
                     <!-- Single Widget Area -->

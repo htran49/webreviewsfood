@@ -61,9 +61,26 @@
                                     </div>
 
                                 <div class="posts-content">
+                                        <table class="table">
 
-
-
+                                                <tbody>
+                                                  <tr>
+                                                    <th scope="row">Địa chỉ</th>
+                                                    <td>{{ $databaiviet[0]['diachi'] }}
+                                                        <br>
+                                                         <i style="color:orangered" class="fa fa-location-arrow" aria-hidden="true"></i> <span><a href="{{ $databaiviet[0]['map'] }}"  style="color:orangered">Xem địa chỉ</a></span>
+                                                        </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row">Giá tiền</th>
+                                                    <td>{{ $databaiviet[0]['gia'] }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row">Thời gian mở cửa</th>
+                                                    <td>{{ $databaiviet[0]['thoigianmocua'] }}</td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
                                     <p>{!! $databaiviet[0]['noidung'] !!}</p>
                                 </div>
 
@@ -81,7 +98,28 @@
             <div class="col-12 col-sm-8 col-md-6 col-lg-4">
                 <div class="blog-sidebar mt-5 mt-lg-0">
                     <!-- Single Widget Area -->
-              
+                    <div class="single-widget-area about-me-widget text-center">
+                            <div class="widget-title">
+                                <h6>Giới thiệu</h6>
+                            </div>
+                            <div class="about-me-widget-thumb">
+                                <img src="../public/img/gioithieu.jpg" alt="">
+                            </div>
+                            <h4 class="font-shadow-into-light">ĐÀ NẴNG</h4>
+                            <p>Đà Nẵng một trong những trung tâm du lịch hàng đầu miền trung là địa điểm du lịch mà bạn không thể bỏ qua.Không chỉ có du lịch Đà Nẵng còn là một thành phố ẩm thực đặc biệt và phong phú.</p>
+                        </div>
+
+                        <!-- Single Widget Area -->
+                        <div class="single-widget-area subscribe_widget text-center">
+                            <div class="widget-title">
+                                <h6>Theo dõi</h6>
+                            </div>
+                            <div class="subscribe-link">
+                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+
+                            </div>
+                        </div>
 
                     <!-- Single Widget Area -->
 

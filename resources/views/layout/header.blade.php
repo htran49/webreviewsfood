@@ -6,10 +6,7 @@
                     <!--  Top Social bar start -->
                     <div class="top_social_bar">
                         <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <!--  Login Register Area -->
@@ -49,7 +46,7 @@
                 <!-- Logo Area Start -->
                 <div class="col-12">
                     <div class="logo_area text-center">
-                        <a href="index.html" class="yummy-logo">Ăn thôi nào</a>
+                        <a href="/" class="yummy-logo"><img src="public/img/logo.png" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -62,7 +59,7 @@
                         <div class="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
                             <ul class="navbar-nav" id="yummy-nav">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="index.html">Trang chủ <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/">Trang chủ <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="yummyDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Khám phá</a>
